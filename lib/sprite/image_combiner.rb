@@ -2,7 +2,7 @@ module Sprite
   class ImageCombiner
     def initialize
       # avoid loading rmagick till the last possible moment
-      require 'rmagick'
+      require 'RMagick'
     end
     
     def composite_images(dest_image, src_image, x, y)

@@ -4,15 +4,15 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{sprite}
+  s.name = %q{sprite-generator}
   s.version = "0.1.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Jacques Crocker"]
-  s.date = %q{2009-11-19}
+  s.authors = ["Jacques Crocker", "Anton Styagun"]
+  s.date = %q{2009-11-27}
   s.default_executable = %q{sprite}
-  s.description = %q{sprite is a rails/merb plugin that generates sprites for css, sass}
-  s.email = %q{merbjedi@gmail.com}
+  s.description = %q{sprite-generator is a rails/merb plugin that generates sprites for css, sass}
+  s.email = %q{astyagun@gmail.com}
   s.executables = ["sprite"]
   s.extra_rdoc_files = [
     "README.md"
@@ -37,7 +37,7 @@ Gem::Specification.new do |s|
      "sprite.gemspec",
      "tasks/sprite_tasks.rake"
   ]
-  s.homepage = %q{http://github.com/merbjedi/sprite}
+  s.homepage = %q{http://github.com/iast/sprite}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
