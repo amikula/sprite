@@ -72,6 +72,7 @@ Configuration of `sprite-generator` is done via `config/sprite.yml`. It allows y
   - `default_format:` defines the default file image format of the generated files. (defaults to `png`)
   - `default_spacing:` defines the default pixel spacing between sprites (defaults to 0)
   - `class_separator:` used to generated the class name by separating the image name and sprite name (defaults to `-`)
+  - `pseudo_classes`: array of strings. Example: if some image name will end with `_hover` and `pseudo_classes` will equal `['hover']`, then the style for that picture will end with `:hover` instead of `_hover`. (defaults to ['hover'])
 
 * `images:` section provides an array of configurations which define which image files are built, and where they get their sprites from. each image setup provides the following config options:
   - `name:` name of image (required)

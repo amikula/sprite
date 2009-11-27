@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sprite-generator}
-  s.version = "0.1.7"
+  s.version = "0.1.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jacques Crocker", "Anton Styagun"]
@@ -37,7 +37,7 @@ Gem::Specification.new do |s|
      "sprite-generator.gemspec",
      "tasks/sprite_tasks.rake"
   ]
-  s.homepage = %q{http://github.com/iast/sprite}
+  s.homepage = %q{http://github.com/iast/sprite-generator}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}

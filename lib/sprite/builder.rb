@@ -111,6 +111,7 @@ module Sprite
       @config['class_separator']    ||= '-'
       @config["sprites_class"]      ||= 'sprites'
       @config["default_spacing"]    ||= 0
+      @config["pseudo_classes"]     ||= ['hover']
     end
     
     # if no image configs are detected, set some intelligent defaults
