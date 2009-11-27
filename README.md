@@ -166,7 +166,7 @@ You can also easily script it out via capistrano. You could also run `sprite` on
 
 ## ABOUT `sprite` ##
 
-`sprite-generator` is based on `sprite` gem by Jacques Crocker: [sprite](http://github.com/iast/sprite-generator)
+`sprite-generator` is based on `sprite` gem by Jacques Crocker: [sprite](http://github.com/merbjedi/sprite)
 
 `sprite` was originally based off of Richard Huang's excellent Rails plugin: [css_sprite](http://github.com/flyerhzm/css_sprite)
 
