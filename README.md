@@ -22,7 +22,7 @@ or via installer: http://github.com/maddox/magick-installer/tree/master
 Install the `sprite` gem from gemcutter
 
     gem sources -a http://gemcutter.org
-    gem install sprite
+    gem install amikula-sprite
 
 ## USAGE ##
 
