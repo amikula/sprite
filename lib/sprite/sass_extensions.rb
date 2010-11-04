@@ -1,10 +1,27 @@
 module Sprite
   module Sass
     module Extensions
+      def self.asset_id(&block)
+        @asset_id = block if block
+      end
+
+      def self.query_string_for(asset)
+        if @asset_id
+          "?#{@asset_id.call(asset)}"
+        else
+          ''
+        end
+      end
+
+      def sprite_path(group)
+        path = sprite_builder.image_path(group.value)
+        "#{path}#{Sprite::Sass::Extensions.query_string_for(path)}"
+      end
+
       def sprite_background(group, image)
         sprite = sprite_data(group, image)
         if sprite
-          sprite_path = sprite_builder.image_path(group.value)
+          sprite_path = sprite_path(group)
           ::Sass::Script::String.new "url('#{sprite_path}') no-repeat #{sprite[:x]}px #{sprite[:y]}px"
         else
           ::Sass::Script::String.new ""
@@ -28,11 +45,11 @@ module Sprite
       end
 
       def sprite_image(group)
-        ::Sass::Script::String.new sprite_builder.image_path(group.value)
+        ::Sass::Script::String.new sprite_path(group)
       end
 
       def sprite_url(group)
-        ::Sass::Script::String.new "url('#{sprite_image(group)}')"
+        ::Sass::Script::String.new "url('#{sprite_path(group)}')"
       end
 
       ##
