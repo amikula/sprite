@@ -16,13 +16,12 @@ module Sprite
 
         # write the sass mixins to disk
         File.open(File.join(Sprite.root, sass_path), 'w') do |f|
-          f.puts "!sprite_data = '#{path}'"
+          f.puts "$sprite_data: '#{path}'"
           f.puts ""
-          f.puts "= sprite(!group_name, !image_name)"
-          f.puts "  background= sprite_background(!group_name, !image_name)"
-          f.puts "  width= sprite_width(!group_name, !image_name)"
-          f.puts "  height= sprite_height(!group_name, !image_name)"
-          f.puts ""
+          f.puts "@mixin sprite($group_name, $image_name)"
+          f.puts "  background: sprite_background($group_name, $image_name)"
+          f.puts "  width: sprite_width($group_name, $image_name)"
+          f.puts "  height: sprite_height($group_name, $image_name)"
         end
       end
 

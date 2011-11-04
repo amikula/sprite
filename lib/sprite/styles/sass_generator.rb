@@ -15,7 +15,7 @@ module Sprite
             f.puts ".#{@builder.config['sprites_class']}"
             @level += 1
           end
-          
+
           sprite_files.each do |sprite_file, sprites|
             sprites.each do |sprite|
               f.puts sass_line("&.#{sprite[:group]}#{@builder.config['class_separator']}#{sprite[:name]}")
@@ -29,12 +29,12 @@ module Sprite
           end
         end
       end
-      
+
       # write sass output with correct tab spaces prepended
       def sass_line(sass)
         "#{'  '*@level}#{sass}"
       end
-  
+
       def extension
         "sass"
       end
