@@ -62,6 +62,20 @@ module Sprite
       "#{config['css_image_path']}#{sprite_file}"
     end
 
+    def sprite_data(group, image)
+      unless @__sprite_data
+        # read sprite data from yml
+        @__sprite_data = File.open(style_output_path) { |yf| YAML::load( yf ) }
+      end
+
+      group_data = @__sprite_data[group.value]
+      if group_data
+        return group_data[image.value]
+      else
+        nil
+      end
+    end
+
   protected
     def write_image(image_info)
       results = []

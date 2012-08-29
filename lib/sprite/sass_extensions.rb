@@ -19,7 +19,7 @@ module Sprite
       end
 
       def sprite_background(group, image)
-        sprite = sprite_data(group, image)
+        sprite = sprite_builder.sprite_data(group, image)
         if sprite
           sprite_path = sprite_path(group)
           ::Sass::Script::String.new "url('#{sprite_path}') no-repeat #{sprite[:x]}px #{sprite[:y]}px"
@@ -81,7 +81,7 @@ module Sprite
       end
 
       def sprite_attr(attr, group, image)
-        sprite = sprite_data(group, image)
+        sprite = sprite_builder.sprite_data(group, image)
         if sprite
           "#{sprite[attr]}px"
         else
@@ -90,23 +90,7 @@ module Sprite
       end
 
       def sprite_builder
-        @__sprite_builder ||= Builder.from_config
-      end
-
-      def sprite_data(group, image)
-        unless @__sprite_data
-          sprite_data_path = sprite_builder.style_output_path
-
-          # read sprite data from yml
-          @__sprite_data = File.open(sprite_data_path) { |yf| YAML::load( yf ) }
-        end
-
-        group_data = @__sprite_data[group.value]
-        if group_data
-          return group_data[image.value]
-        else
-          nil
-        end
+        @@__sprite_builder ||= Builder.from_config
       end
     end
   end
