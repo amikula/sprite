@@ -72,5 +72,27 @@ describe Sprite::Builder do
     end
   end
 
+  context "sprite data" do
+    before(:each) do
+      @sprite = Sprite::Builder.from_config("resources/configs/config-test.yml")
+      @sprite.config['style'] = 'sass_yml'
+      @sprite.config['style_output_path'] = 'resources/sprites'
+      @group = mock(:group, :value => "group")
+      @image = mock(:image, :value => "image")
+    end
+
+    it "returns data for a particular group and image" do
+      data = @sprite.sprite_data(@group, @image)
+      data.should_not be_nil
+    end
+
+    it "loads the yaml file once" do
+      File.stub! :open => {}
+      File.should_receive(:open).once
+      @sprite.sprite_data(@group, @image)
+      @sprite.sprite_data(@group, @image)
+    end
+
+  end
 
 end
